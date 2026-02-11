@@ -27,7 +27,7 @@
   console.keyMap = "fr";
 
   # === Programs ===
-  programms = {
+  programs = {
 	zsh = {
 		enable = true;
 		enableLsColors = true;
