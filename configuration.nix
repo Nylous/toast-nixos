@@ -34,6 +34,7 @@
 		enableLsColors = true;
 		syntaxHighlighting.enable = true;
 	};
+
 	neovim = {
 		enable = true;
 		defaultEditor = true;
@@ -44,6 +45,7 @@
   environment = {
 	systemPackages = with pkgs; [
 		git		# Used by flakes
+		alacritty
 	];
 
 	# Set the default editor to nvim
