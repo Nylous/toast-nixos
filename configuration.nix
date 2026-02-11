@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
   ];
 
-  # User creation
+  # === User === 
   users = {
 	  motd = "\n\t[=== Welcome to ToastOS ===]\n\n";
 	  defaultUsersShell = pkgs.zsh;
@@ -17,10 +17,13 @@
 		  };
 	  };
   };
-  # Configured systems
+
+  # === Systems ===
+
   # Enable the Flakes & nix command-line tool (Experimental for quite a time now)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  # Configured programs
+
+  # === Programs ===
   programms = {
 	zsh = {
 		enable = true;
@@ -32,16 +35,24 @@
 		defaultEditor = true;
 	};
   };
-  # Pre-installed packages
-  environment.systemPackages = with pkgs; [
-    git		# Used by flakes
-  ];
-  # Set the default editor to vim
+
+  # === Packages & Envs ===
   environment = {
-	variables = {
-		EDITOR = "nvim";
-		VISUAL = "nvim";
-	};
+	  systemPackages = with pkgs; [
+		git		# Used by flakes
+	  ];
+
+	  # Set the default editor to nvim
+	  environment = {
+		variables = {
+			EDITOR = "nvim";
+			VISUAL = "nvim";
+		};
+	  };
   };
-  # Fonts
+
+  # === Fonts ===
+  fonts.packages = [
+	  pkgs.nerd-fonts.iosevka-term-slab
+  ];
 }
