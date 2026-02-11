@@ -41,17 +41,15 @@
 
   # === Packages & Envs ===
   environment = {
-	  systemPackages = with pkgs; [
+	systemPackages = with pkgs; [
 		git		# Used by flakes
-	  ];
+	];
 
-	  # Set the default editor to nvim
-	  environment = {
-		variables = {
-			EDITOR = "nvim";
-			VISUAL = "nvim";
-		};
-	  };
+	# Set the default editor to nvim
+	variables = {
+		EDITOR = "nvim";
+		VISUAL = "nvim";
+	};
   };
 
   # === Fonts ===
