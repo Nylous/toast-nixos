@@ -23,6 +23,9 @@
   # Enable the Flakes & nix command-line tool (Experimental for quite a time now)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # === Console ===
+  console.keyMap = "fr";
+
   # === Programs ===
   programms = {
 	zsh = {
