@@ -64,6 +64,11 @@
 		enable = true;
 		defaultEditor = true;
 	};
+
+	niri = {
+		enable = true;
+		useNautilus = true;
+	};
   };
 
 
