@@ -8,7 +8,7 @@
   # === User === 
   users = {
 	  motd = "\n\t[=== Welcome to ToastOS ===]\n\n";
-	  defaultUsersShell = pkgs.zsh;
+	  defaultUserShell = pkgs.zsh;
 	  users = {
 		  toast = {
 			  isNormalUser = true;
