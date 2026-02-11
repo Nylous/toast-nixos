@@ -6,6 +6,10 @@
   ];
   boot.loader.systemd-boot.enable = true;
 
+  # Enable the Flakes & nix command-line tool (Experimental for quite a time now)
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
   # === User === 
   users = {
 	  motd = "\n\t[=== Welcome to ToastOS ===]\n\n";
@@ -19,27 +23,19 @@
 	  };
   };
 
-  # === Systems ===
 
-  # Enable the Flakes & nix command-line tool (Experimental for quite a time now)
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # === Fonts ===
+  fonts.packages = [
+	  pkgs.nerd-fonts.iosevka-term-slab
+  ];
+
 
   # === Console ===
-  console.keyMap = "fr";
-
-  # === Programs ===
-  programs = {
-	zsh = {
-		enable = true;
-		enableLsColors = true;
-		syntaxHighlighting.enable = true;
-	};
-
-	neovim = {
-		enable = true;
-		defaultEditor = true;
-	};
+  console = {
+	  keyMap = "fr";
+	  font = "IosevkaTermSlab Nerd Font";
   };
+
 
   # === Packages & Envs ===
   environment = {
@@ -55,10 +51,25 @@
 	};
   };
 
-  # === Fonts ===
-  fonts.packages = [
-	  pkgs.nerd-fonts.iosevka-term-slab
-  ];
+
+  # === Programs ===
+  programs = {
+	zsh = {
+		enable = true;
+		enableLsColors = true;
+		syntaxHighlighting.enable = true;
+	};
+
+	neovim = {
+		enable = true;
+		defaultEditor = true;
+	};
+  };
+
+
+  # === Services ===
+  services.displayManager.ly.enable = true;
+
 
   system.stateVersion = "25.11";
 }
