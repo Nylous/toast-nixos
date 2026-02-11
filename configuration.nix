@@ -57,4 +57,6 @@
   fonts.packages = [
 	  pkgs.nerd-fonts.iosevka-term-slab
   ];
+
+  system.stateVersion = "25.11";
 }
