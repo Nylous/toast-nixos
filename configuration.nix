@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  # === Base and Imports === 
   imports = [
     ./hardware-configuration.nix
   ];
   boot.loader.systemd-boot.enable = true;
+
+  # === Network === 
+  networking.hostName = "toastwares";
+  networking.networkmanager.enable = true;
 
   # Enable the Flakes & nix command-line tool (Experimental for quite a time now)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -36,7 +41,6 @@
 	  font = "IosevkaTermSlab Nerd Font";
   };
 
-
   # === Packages & Envs ===
   environment = {
 	systemPackages = with pkgs; [
@@ -58,6 +62,7 @@
 		enable = true;
 		enableLsColors = true;
 		syntaxHighlighting.enable = true;
+        autosuggestions.enable = true;
 	};
 
 	neovim = {
@@ -67,13 +72,16 @@
 
 	niri = {
 		enable = true;
-		useNautilus = true;
+		useNautilus = false;
 	};
   };
 
 
   # === Services ===
-  services.displayManager.ly.enable = true;
+  services = {
+  	displayManager.ly.enable = true;
+	xserver.xkb.layout = "fr";
+  };
 
 
   system.stateVersion = "25.11";
