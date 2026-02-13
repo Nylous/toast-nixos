@@ -3,7 +3,7 @@
 {
   # === Base and Imports === 
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
   ];
   boot.loader.systemd-boot.enable = true;
 
@@ -62,7 +62,8 @@
 		enable = true;
 		enableLsColors = true;
 		syntaxHighlighting.enable = true;
-        autosuggestions.enable = true;
+        	autosuggestions.enable = true;
+		shellInit = "echo '\n\t[=== Welcome to ToastOS v0.1 ===]\n\n'";
 	};
 
 	neovim = {
