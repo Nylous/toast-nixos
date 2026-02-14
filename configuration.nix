@@ -17,7 +17,6 @@
 
   # === User === 
   users = {
-	  motd = "\n\t[=== Welcome to ToastOS ===]\n\n";
 	  defaultUserShell = pkgs.zsh;
 	  users = {
 		  toast = {
@@ -46,12 +45,15 @@
 	systemPackages = with pkgs; [
 		git		# Used by flakes
 		alacritty
+		firefox
 	];
 
 	# Set the default editor to nvim
 	variables = {
 		EDITOR = "nvim";
 		VISUAL = "nvim";
+		TOAST_DOTFILES="/home/toast/Toasts/toast-dotfiles";
+		TOAST_NIXCONFIG="/home/toast/Toasts/toast-nixos";
 	};
   };
 
@@ -63,7 +65,7 @@
 		enableLsColors = true;
 		syntaxHighlighting.enable = true;
         	autosuggestions.enable = true;
-		shellInit = "echo '\n\t[=== Welcome to ToastOS v0.1 ===]\n\n'";
+		shellInit = "echo '\n\t[=== Welcome to ToastOS v0.2 ===]\n\n'";
 	};
 
 	neovim = {
