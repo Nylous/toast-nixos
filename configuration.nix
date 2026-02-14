@@ -65,7 +65,7 @@
 		enableLsColors = true;
 		syntaxHighlighting.enable = true;
         	autosuggestions.enable = true;
-		shellInit = "echo '\n\t[=== Welcome to ToastOS v0.2 ===]\n\n'";
+		shellInit = "echo '\n\t\t[=== Welcome to ToastOS v0.3 ===]\n\n\tStay brave and remember\n\t\t...To <CODE> is to LIVE...\n\t\t\t...KNOWLEDGE is POWER...\n\n'";
 	};
 
 	neovim = {

@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771028788,
+        "narHash": "sha256-Xm+ji9UvVi+Ol09qcDhQE291G5GpLOOXKZ2FzUbHrvk=",
+        "ref": "refs/heads/main",
+        "rev": "13f1bb8b8c053844b4e564360ce94cb6ce2bbf05",
+        "shallow": true,
+        "type": "git",
+        "url": "file:///home/toast/Toasts/toast-dotfiles"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "file:///home/toast/Toasts/toast-dotfiles"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1771008912,
+        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dotfiles": "dotfiles",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
